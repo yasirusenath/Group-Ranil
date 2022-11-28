@@ -54,3 +54,15 @@ ggplot(data = Income) + geom_jitter(mapping=aes(x = term, y = annual_inc, colour
 ggplot(Income ,aes(x = annual_inc, y = revol_bal, fill = revol_bal)) + geom_boxplot() + geom_jitter()
 
 ```
+```{r}
+lon<-filter(lone,loan_amnt<100000)
+ggplot(data=lon)+ geom_bar(mapping=aes(x=term ,fill=term, alpha = 0.6))+labs(title='term distribution',x='term(months)',y='frequancy')
+```
+```{r}
+ggplot(data=lon)+ geom_jitter(mapping=aes(x=term,y=loan_amnt,colour=term))+labs(title='term distribution with loan amount',x='term(months)',y='loan amount')
+```
+```{r}
+ggplot(data=lon)+ geom_violin(mapping=aes(x=purpose,y=loan_amnt,colour=purpose,fill=purpose))+labs(title='purpose loan distribution',x='purpose',y='loan amount')
+```
+
+
